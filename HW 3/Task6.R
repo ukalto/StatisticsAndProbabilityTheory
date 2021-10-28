@@ -48,18 +48,9 @@ mySum(n)
 
 
 # Task 6c
-curve <- function(t) {
-  if(t >= 0 && t < 2*pi) {
-    n <- cos(2*t)
-    k <- sin(3*t)
-    t <- factorial(n)/(factorial(k)*factorial(n-k))
-  }
-}
-
-plot(curve)
-setwd("C:/Users/maxig/Desktop/Uni/Statistik/HW 3")
+t <- seq(0,pi*2,0.01)
+x <- (sin(3*t))
+y <- (cos(2*t))
+plot(y,x,type = "line")
+setwd("your Directory")
 dev.print(pdf, "6c.pdf")
-
-
-
-
