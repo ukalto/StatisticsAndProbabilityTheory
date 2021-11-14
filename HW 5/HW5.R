@@ -28,10 +28,10 @@ plot(x, pnorm(x,5,2), "l", col="red")
 #5)b)
 #for S
 expS = 5*50
-sigmaS = sqrt(2^2*50)
+sigmaS = 50*sqrt(2^2)
 #for X
-expX = 5
-sigmaX = sqrt(2^2/50)
+expX = (50*5)/50
+sigmaX = sqrt(2^2/50^2)
 #5)c)
 hist(rnorm(50,5,2))
 hist(rnorm(500,5,2))
