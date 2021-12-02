@@ -1,6 +1,13 @@
 #'*Task 2*
 setwd("C:/Users/maxig/Desktop/Uni/Statistik/StatisticsAndProbabilityTheory/HW 8")
 load("dist.Rdata")
+mean <- mean(distanz)
+h0 <- 550
+n <- length(distanz)
+sd <- sd(distanz)
+sem <- sd / sqrt(n)
+alpha <- 0.05
+
 plot_distance <- function(data, mu) {
   mean <- mean(data)
   h0 <- 550
@@ -8,7 +15,6 @@ plot_distance <- function(data, mu) {
   sd <- sd(data)
   sem <- sd / sqrt(n)
   alpha <- 0.05
-  
   hist(data, main=sprintf("Distance %d",n), xlab = "distance in meter")
   abline(v=h0, col='blue', lwd = 1.5)
   abline(v=mean, col='green', lwd = 1.5)
@@ -85,10 +91,10 @@ hist(wz, main="Waitingtimes", xlab="waittime (sec)", col="white")
 n <- length(wz)
 mean <- mean(wz)
 sd <- sd(wz)
-sem <- S / sqrt(n)
+sem <- sd / sqrt(n)
 X <- (1/n) * sum(wz)
 q = qnorm(0.99)
-I <- c(X-(q1*Sem), X+(q1*Sem))
+I <- c(X-(q*sem), X+(q*sem))
 
 rect(I[1],0, I[2], 100, density = 10, col='green')
 abline(v=mean, col='red', lwd=2)
