@@ -28,7 +28,7 @@ plot_distance <- function(data, mu) {
 }
 
 # 2a)
-# It is not bell-shaped.
+# It is bell-shaped.
 plot_distance(distanz)
 abline(v=c(mean+sem,mean-sem), col='red', lwd = 1.5)
 
