@@ -47,6 +47,25 @@ pnorm(t)*2
 # 0.957589  1.016535 
 # p-value is not the exact same value
 
+#'*Task 4*
+load("tireData.Rdata")
+par(mfrow=c(2,1))
+left = tireData[1:20,1]
+right = tireData[1:20,2]
+# 4a)
+hist(left)
+hist(right)
+# 4b)
+t = t.test(left,right)
+t
+# 4c)
+d = left-right
+newt = t.test(d)
+# 4d)
+sdl = sd(left)
+sdr = sd(right)
+sd = sd(d)
+
 #'*Task 6*
 alpha = 0.05
 H0 = 0
@@ -101,4 +120,5 @@ plot(seq(-5, 5, 0.5), m[1, 1:21], type="l", col="red", main="Testmächte bei a, b
 lines(seq(-5, 5, 0.5), m[2, 1:21], type="l", col="blue")
 lines(seq(-5, 5, 0.5), m[3, 1:21], type="l", col="green")
 legend("topright", legend = c("n=10, s=3", "n=20, s=3", "n=20, s=1"), col= c("red", "blue", "green"), lty=1)
+
 
